@@ -129,7 +129,7 @@ function App() {
             {/* Bottom URL Bar */}
             <div className="bottom-nav">
               <form onSubmit={handleSubmit} className="search-bar">
-                <Search size={18} color="#94a3b8" />
+                <Search size={16} color="#64748b" strokeWidth={2} />
                 <input
                   className="search-input"
                   value={inputValue}
@@ -137,8 +137,8 @@ function App() {
                   placeholder="Tìm kiếm hoặc nhập địa chỉ..."
                 />
                 <RotateCcw
-                  size={18}
-                  color="#94a3b8"
+                  size={16}
+                  color="#64748b"
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
                     if (!url) return;

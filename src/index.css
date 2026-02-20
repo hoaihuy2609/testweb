@@ -68,7 +68,8 @@ body {
 /* iPhone Styling - Xịn hơn, không bị tràn */
 .iphone-frame {
   position: relative;
-  height: min(85vh, 852px);
+  height: 90vh;
+  max-height: 852px;
   /* Responsive height */
   aspect-ratio: 393 / 852;
   background: var(--iphone-black);
@@ -82,8 +83,6 @@ body {
   display: flex;
   flex-direction: column;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  flex-shrink: 0;
-  /* Prevent squeezing */
 }
 
 .iphone-screen {
@@ -132,17 +131,19 @@ body {
 /* Bottom Nav & Search Bar */
 .bottom-nav {
   background: #fff;
-  padding: 12px 16px 8px;
+  padding: 8px 16px 4px;
   border-top: none;
 }
 
 .search-bar {
-  background: #f0f3f6;
-  border-radius: 14px;
-  padding: 12px 18px;
+  background: #eef2f6;
+  /* Matching the light gray-blue in the image */
+  border-radius: 100px;
+  /* Full pill shape */
+  padding: 10px 16px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   transition: all 0.2s ease;
 }
 
