@@ -58,13 +58,6 @@ function App() {
         className="iphone-frame"
       >
         <div className="iphone-screen">
-          {/* Dynamic Island */}
-          <div className="dynamic-island-container">
-            <motion.div
-              whileHover={{ width: 200, height: 40 }}
-              className="dynamic-island"
-            />
-          </div>
 
           {/* Status Bar */}
           <div className="status-bar">
