@@ -68,14 +68,15 @@ body {
 /* iPhone Styling - Xịn hơn, không bị tràn */
 .iphone-frame {
   position: relative;
-  height: 95vh;
-  max-height: 932px;
-  /* Kích thước của iPhone 15 Pro Max */
-  aspect-ratio: 430 / 932;
-  /* Tỉ lệ màn hình lớn hơn */
+  height: 98vh;
+  max-height: 1000px;
+  /* To hết cỡ luôn mày ơi */
+  aspect-ratio: 460 / 1000;
+  /* Tỉ lệ cực lớn */
   background: var(--iphone-black);
   border-radius: 54px;
-  padding: 11px;
+  padding: 10px;
+  /* Giảm padding một chút để tăng diện tích màn hình */
   box-shadow:
     0 0 0 2px #333,
     0 0 0 4px #1a1a1a,
