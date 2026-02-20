@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { RotateCcw, Battery, Wifi, Signal, Globe, Search } from 'lucide-react';
+import { RotateCcw, Globe, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [url, setUrl] = useState('');
   const [inputValue, setInputValue] = useState('');
-  const [time, setTime] = useState(new Date());
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
     const params = new URLSearchParams(window.location.search);
     const urlParam = params.get('url') || params.get('u');
     if (urlParam) {
@@ -17,7 +15,6 @@ function App() {
       setUrl(target);
       setInputValue(target);
     }
-    return () => clearInterval(timer);
   }, []);
 
   const handlePopOut = () => {
@@ -59,17 +56,6 @@ function App() {
       >
         <div className="iphone-screen">
 
-          {/* Status Bar */}
-          <div className="status-bar">
-            <div className="time">
-              {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false })}
-            </div>
-            <div className="status-icons">
-              <Signal size={16} strokeWidth={2.5} />
-              <Wifi size={16} strokeWidth={2.5} />
-              <Battery size={20} strokeWidth={2.5} />
-            </div>
-          </div>
 
           {/* Main Browser View */}
           <div className="browser-ui" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative' }}>
