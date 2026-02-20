@@ -82,32 +82,67 @@ function App() {
           <div className="browser-ui">
             <div className="browser-content">
               {!url ? (
-                <div style={{
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  background: 'linear-gradient(180deg, #fff 0%, #f1f5f9 100%)',
-                  padding: '40px'
-                }}>
-                  <div style={{
-                    width: 80,
-                    height: 80,
-                    background: '#3b82f6',
-                    borderRadius: '22px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '24px',
-                    boxShadow: '0 20px 40px rgba(59, 130, 246, 0.3)'
-                  }}>
-                    <Globe size={40} color="white" />
+                <div className="dashboard">
+                  <div className="dashboard-header">
+                    <div style={{ cursor: 'pointer', color: '#6366f1' }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </div>
+                    <h1 style={{ color: '#6366f1', fontSize: '20px', fontWeight: '800' }}>PhysiVault</h1>
                   </div>
-                  <h2 style={{ fontSize: '24px', fontWeight: '700', margin: '0 0 12px' }}>PhysiVault Browser</h2>
-                  <p style={{ textAlign: 'center', color: '#64748b', fontSize: '14px', lineHeight: '1.5' }}>
-                    Nhập địa chỉ web phía dưới để bắt đầu trải nghiệm giả lập iPhone cao cấp.
-                  </p>
+
+                  <div className="dashboard-badge">
+                    <span>✧ HỆ THỐNG QUẢN LÝ THÔNG TIN PHYSICS</span>
+                  </div>
+
+                  <div className="dashboard-title">
+                    <h2 style={{ fontSize: '32px', fontWeight: '800', color: '#111827', margin: 0 }}>Chào mừng đến với</h2>
+                    <h2 className="gradient-text" style={{ fontSize: '36px', fontWeight: '900', margin: 0 }}>PhysiVault</h2>
+                  </div>
+
+                  <div className="quote-card">
+                    <div className="quote-icon">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h4c0 3.5-3.5 4.5-6 5"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h4c0 3.5-3.5 4.5-6 5"></path></svg>
+                    </div>
+                    <p className="quote-text">
+                      Vật lý không chỉ là các phương trình, nó là cách ta nhìn thế giới.
+                    </p>
+                  </div>
+
+                  <div className="info-list">
+                    <div className="info-item">
+                      <div className="info-icon-wrapper" style={{ background: '#eff6ff', color: '#2563eb' }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                      </div>
+                      <div className="info-content">
+                        <span className="info-label">HỆ THỐNG</span>
+                        <span className="info-value">Phát triển bởi <span style={{ color: '#2563eb' }}>Nguyễn Trần Hoài Huy</span></span>
+                      </div>
+                    </div>
+
+                    <div className="info-item">
+                      <div className="info-icon-wrapper" style={{ background: '#f0fdf4', color: '#16a34a' }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                      </div>
+                      <div className="info-content">
+                        <span className="info-label">TỔ LÝ</span>
+                        <span className="info-value">Group Vật lý Physics</span>
+                      </div>
+                    </div>
+
+                    <div className="info-item">
+                      <div className="info-icon-wrapper" style={{ background: '#faf5ff', color: '#9333ea' }}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                      </div>
+                      <div className="info-content">
+                        <span className="info-label">TÁC GIẢ</span>
+                        <span className="info-value">Thái Văn Thanh</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="fab">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                  </div>
                 </div>
               ) : (
                 <iframe src={url} style={{ border: 'none', width: '100%', height: '100%' }} title="Simulator" />
