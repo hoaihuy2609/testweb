@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RotateCcw, Battery, Wifi, Signal, Globe, Search, Lock } from 'lucide-react';
+import { RotateCcw, Battery, Wifi, Signal, Globe, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
@@ -82,67 +82,38 @@ function App() {
           <div className="browser-ui">
             <div className="browser-content">
               {!url ? (
-                <div className="dashboard">
-                  <div className="dashboard-header">
-                    <div style={{ cursor: 'pointer', color: '#6366f1' }}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                    </div>
-                    <h1 style={{ color: '#6366f1', fontSize: '20px', fontWeight: '800' }}>PhysiVault</h1>
+                <div style={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  background: '#fff',
+                  padding: '40px'
+                }}>
+                  <div style={{
+                    color: '#e2e8f0',
+                    marginBottom: '32px'
+                  }}>
+                    <Globe size={100} strokeWidth={1} />
                   </div>
-
-                  <div className="dashboard-badge">
-                    <span>✧ HỆ THỐNG QUẢN LÝ THÔNG TIN PHYSICS</span>
-                  </div>
-
-                  <div className="dashboard-title">
-                    <h2 style={{ fontSize: '32px', fontWeight: '800', color: '#111827', margin: 0 }}>Chào mừng đến với</h2>
-                    <h2 className="gradient-text" style={{ fontSize: '36px', fontWeight: '900', margin: 0 }}>PhysiVault</h2>
-                  </div>
-
-                  <div className="quote-card">
-                    <div className="quote-icon">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h4c0 3.5-3.5 4.5-6 5"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h4c0 3.5-3.5 4.5-6 5"></path></svg>
-                    </div>
-                    <p className="quote-text">
-                      Vật lý không chỉ là các phương trình, nó là cách ta nhìn thế giới.
-                    </p>
-                  </div>
-
-                  <div className="info-list">
-                    <div className="info-item">
-                      <div className="info-icon-wrapper" style={{ background: '#eff6ff', color: '#2563eb' }}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-                      </div>
-                      <div className="info-content">
-                        <span className="info-label">HỆ THỐNG</span>
-                        <span className="info-value">Phát triển bởi <span style={{ color: '#2563eb' }}>Nguyễn Trần Hoài Huy</span></span>
-                      </div>
-                    </div>
-
-                    <div className="info-item">
-                      <div className="info-icon-wrapper" style={{ background: '#f0fdf4', color: '#16a34a' }}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                      </div>
-                      <div className="info-content">
-                        <span className="info-label">TỔ LÝ</span>
-                        <span className="info-value">Group Vật lý Physics</span>
-                      </div>
-                    </div>
-
-                    <div className="info-item">
-                      <div className="info-icon-wrapper" style={{ background: '#faf5ff', color: '#9333ea' }}>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                      </div>
-                      <div className="info-content">
-                        <span className="info-label">TÁC GIẢ</span>
-                        <span className="info-value">Thái Văn Thanh</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="fab">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                  </div>
+                  <h3 style={{
+                    fontSize: '20px',
+                    fontWeight: '500',
+                    color: '#94a3b8',
+                    margin: '0 0 8px',
+                    textAlign: 'center'
+                  }}>
+                    Nhập địa chỉ web để bắt đầu lướt
+                  </h3>
+                  <p style={{
+                    textAlign: 'center',
+                    color: '#cbd5e1',
+                    fontSize: '13px',
+                    margin: 0
+                  }}>
+                    (Lưu ý: Một số web như Google sẽ chặn hiển thị iframe)
+                  </p>
                 </div>
               ) : (
                 <iframe src={url} style={{ border: 'none', width: '100%', height: '100%' }} title="Simulator" />
@@ -161,28 +132,25 @@ function App() {
                 )}
               </AnimatePresence>
 
-              {/* Float URL Bar */}
-              <div className="url-bar-container">
-                <form onSubmit={handleSubmit} className="url-bar-glass">
-                  <Lock size={14} color="#64748b" />
+              {/* Bottom URL Bar */}
+              <div className="bottom-nav">
+                <form onSubmit={handleSubmit} className="search-bar">
+                  <Search size={18} color="#94a3b8" />
                   <input
-                    className="url-input"
+                    className="search-input"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder="Tìm kiếm hoặc nhập địa chỉ..."
                   />
-                  {inputValue && (
-                    <button type="submit" style={{ background: 'none', border: 'none', padding: 0, display: 'flex', cursor: 'pointer' }}>
-                      <Search size={18} color="#3b82f6" />
-                    </button>
-                  )}
                   <RotateCcw
                     size={18}
-                    color="#64748b"
+                    color="#94a3b8"
                     style={{ cursor: 'pointer' }}
                     onClick={() => {
+                      if (!url) return;
                       setIsLoading(true);
-                      setUrl(url + (url.includes('?') ? '&' : '?') + 't=' + Date.now());
+                      const separator = url.includes('?') ? '&' : '?';
+                      setUrl(url + separator + 't=' + Date.now());
                       setTimeout(() => setIsLoading(false), 800);
                     }}
                   />
@@ -191,7 +159,7 @@ function App() {
             </div>
 
             {/* Home Indicator */}
-            <div className="home-indicator-bar">
+            <div className="home-indicator-bar" style={{ background: '#fff' }}>
               <div className="home-indicator" />
             </div>
           </div>
