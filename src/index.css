@@ -68,8 +68,8 @@ body {
 /* iPhone Styling - Xịn hơn, không bị tràn */
 .iphone-frame {
   position: relative;
-  height: 90vh;
-  max-height: 852px;
+  height: min(85vh, 852px);
+  /* Responsive height */
   aspect-ratio: 393 / 852;
   background: var(--iphone-black);
   border-radius: 54px;
@@ -82,6 +82,8 @@ body {
   display: flex;
   flex-direction: column;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  /* Prevent squeezing */
 }
 
 .iphone-screen {
@@ -155,12 +157,14 @@ body {
   border: none;
   outline: none;
   font-size: 16px;
-  color: #475569;
+  color: #1a1a1a;
+  /* Darker text for visibility */
   font-weight: 400;
 }
 
 .search-input::placeholder {
-  color: #94a3b8;
+  color: #64748b;
+  /* Darker placeholder */
 }
 
 .home-indicator-bar {
