@@ -72,8 +72,8 @@ function App() {
           </div>
 
           {/* Main Browser View */}
-          <div className="browser-ui">
-            <div className="browser-content">
+          <div className="browser-ui" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative' }}>
+            <div className="browser-content" style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
               {!url ? (
                 <div style={{
                   height: '100%',
@@ -82,19 +82,19 @@ function App() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   background: '#fff',
-                  padding: '40px'
+                  padding: '20px 40px'
                 }}>
                   <div style={{
                     color: '#e2e8f0',
-                    marginBottom: '32px'
+                    marginBottom: '24px'
                   }}>
-                    <Globe size={100} strokeWidth={1} />
+                    <Globe size={110} strokeWidth={1} />
                   </div>
                   <h3 style={{
-                    fontSize: '20px',
-                    fontWeight: '500',
+                    fontSize: '22px',
+                    fontWeight: '600',
                     color: '#94a3b8',
-                    margin: '0 0 8px',
+                    margin: '0 0 12px',
                     textAlign: 'center'
                   }}>
                     Nhập địa chỉ web để bắt đầu lướt
@@ -102,8 +102,9 @@ function App() {
                   <p style={{
                     textAlign: 'center',
                     color: '#cbd5e1',
-                    fontSize: '13px',
-                    margin: 0
+                    fontSize: '14px',
+                    margin: 0,
+                    maxWidth: '80%'
                   }}>
                     (Lưu ý: Một số web như Google sẽ chặn hiển thị iframe)
                   </p>
@@ -126,18 +127,40 @@ function App() {
               </AnimatePresence>
             </div>
 
-            {/* Bottom URL Bar */}
-            <div className="bottom-nav">
-              <form onSubmit={handleSubmit} className="search-bar">
-                <Search size={16} color="#64748b" strokeWidth={2} />
+            {/* Bottom URL Bar Container - Đảm bảo luôn nằm trên cùng */}
+            <div className="bottom-nav" style={{
+              background: '#fff',
+              padding: '12px 16px 16px',
+              borderTop: '1px solid #f1f5f9',
+              zIndex: 1000
+            }}>
+              <form onSubmit={handleSubmit} className="search-bar" style={{
+                background: '#eef2f6',
+                borderRadius: '100px',
+                padding: '12px 18px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+              }}>
+                <Search size={18} color="#64748b" strokeWidth={2.5} />
                 <input
                   className="search-input"
+                  style={{
+                    flex: 1,
+                    background: 'transparent',
+                    border: 'none',
+                    outline: 'none',
+                    fontSize: '16px',
+                    color: '#1a1a1a',
+                    width: '100%'
+                  }}
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Tìm kiếm hoặc nhập địa chỉ..."
                 />
                 <RotateCcw
-                  size={16}
+                  size={18}
                   color="#64748b"
                   style={{ cursor: 'pointer' }}
                   onClick={() => {
@@ -150,11 +173,11 @@ function App() {
                 />
               </form>
             </div>
+          </div>
 
-            {/* Home Indicator */}
-            <div className="home-indicator-bar" style={{ background: '#fff' }}>
-              <div className="home-indicator" />
-            </div>
+          {/* Home Indicator */}
+          <div className="home-indicator-bar" style={{ height: '24px', background: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'flex-end', paddingBottom: '8px' }}>
+            <div className="home-indicator" style={{ width: '120px', height: '5px', background: '#000', borderRadius: '10px', opacity: 0.2 }} />
           </div>
         </div>
       </motion.div>
