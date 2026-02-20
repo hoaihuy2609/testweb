@@ -65,13 +65,13 @@ body {
   box-sizing: border-box;
 }
 
-/* iPhone Styling - Cập nhật tỉ lệ: Cao hơn và thon hơn một chút */
+/* iPhone Styling - Cập nhật tỉ lệ: Rộng hơn một chút */
 .iphone-frame {
   position: relative;
   height: 95vh;
   max-height: 890px;
-  aspect-ratio: 410 / 890;
-  /* Thon gọn lại theo yêu cầu */
+  aspect-ratio: 425 / 890;
+  /* Tăng bề ngang lên một tẹo theo yêu cầu */
   background: var(--iphone-black);
   border-radius: 54px;
   padding: 10px;
