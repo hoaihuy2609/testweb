@@ -124,31 +124,31 @@ function App() {
                   </motion.div>
                 )}
               </AnimatePresence>
+            </div>
 
-              {/* Bottom URL Bar */}
-              <div className="bottom-nav">
-                <form onSubmit={handleSubmit} className="search-bar">
-                  <Search size={18} color="#94a3b8" />
-                  <input
-                    className="search-input"
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    placeholder="Tìm kiếm hoặc nhập địa chỉ..."
-                  />
-                  <RotateCcw
-                    size={18}
-                    color="#94a3b8"
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => {
-                      if (!url) return;
-                      setIsLoading(true);
-                      const separator = url.includes('?') ? '&' : '?';
-                      setUrl(url + separator + 't=' + Date.now());
-                      setTimeout(() => setIsLoading(false), 800);
-                    }}
-                  />
-                </form>
-              </div>
+            {/* Bottom URL Bar */}
+            <div className="bottom-nav">
+              <form onSubmit={handleSubmit} className="search-bar">
+                <Search size={18} color="#94a3b8" />
+                <input
+                  className="search-input"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  placeholder="Tìm kiếm hoặc nhập địa chỉ..."
+                />
+                <RotateCcw
+                  size={18}
+                  color="#94a3b8"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => {
+                    if (!url) return;
+                    setIsLoading(true);
+                    const separator = url.includes('?') ? '&' : '?';
+                    setUrl(url + separator + 't=' + Date.now());
+                    setTimeout(() => setIsLoading(false), 800);
+                  }}
+                />
+              </form>
             </div>
 
             {/* Home Indicator */}
